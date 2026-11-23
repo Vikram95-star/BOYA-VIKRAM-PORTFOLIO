@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOYA VIKRAM | Data Analyst Portfolio</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #07100c;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(7, 16, 12, 0.95);
+      border-bottom: 1px solid #1c3026;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-container {
+      min-height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: #49e58a;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #d4ddd8;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #49e58a;
+    }
+
+    .contact-btn {
+      background: #49e58a;
+      color: #07100c;
+      padding: 11px 20px;
+      border-radius: 7px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      padding: 80px 0;
+    }
+
+    .hero-content {
+      max-width: 760px;
+    }
+
+    .small-title {
+      color: #49e58a;
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 18px;
+      letter-spacing: 1px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #49e58a;
+    }
+
+    .hero p {
+      color: #aab7b0;
+      font-size: 18px;
+      max-width: 650px;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 23px;
+      border-radius: 7px;
+      font-weight: bold;
+      border: 1px solid #49e58a;
+    }
+
+    .btn-primary {
+      background: #49e58a;
+      color: #07100c;
+    }
+
+    .btn-secondary {
+      color: #49e58a;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 90px 0;
+    }
+
+    .section-title {
+      margin-bottom: 45px;
+    }
+
+    .section-title .label {
+      color: #49e58a;
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .section-title h2 {
+      font-size: 38px;
+      margin-top: 8px;
+    }
+
+    .section-title p {
+      color: #9eaaa4;
+      margin-top: 10px;
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 50px;
+    }
+
+    .about-text p {
+      color: #adb8b2;
+      margin-bottom: 18px;
+      font-size: 16px;
+    }
+
+    .about-card {
+      border: 1px solid #20362a;
+      background: #0b1711;
+      padding: 30px;
+      border-radius: 12px;
+    }
+
+    .about-card h3 {
+      color: #49e58a;
+      margin-bottom: 20px;
+    }
+
+    .info {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid #1c2b22;
+      color: #b8c2bd;
+    }
+
+    .info:last-child {
+      border-bottom: none;
+    }
+
+    /* PROJECTS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .project-card {
+      background: #0b1711;
+      border: 1px solid #20362a;
+      border-radius: 12px;
+      padding: 25px;
+      transition: 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-7px);
+      border-color: #49e58a;
+    }
+
+    .project-number {
+      color: #49e58a;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 25px;
+    }
+
+    .project-card h3 {
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+
+    .project-card p {
+      color: #9eaaa4;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      padding: 6px 10px;
+      border-radius: 20px;
+      background: #122219;
+      border: 1px solid #284334;
+      color: #49e58a;
+      font-size: 12px;
+    }
+
+    /* DASHBOARD / STATS */
+    .stats-section {
+      background: #0a1510;
+      border-top: 1px solid #1d3025;
+      border-bottom: 1px solid #1d3025;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-bottom: 45px;
+    }
+
+    .stat-card {
+      background: #0d1b14;
+      border: 1px solid #243a2d;
+      border-radius: 12px;
+      padding: 28px;
+    }
+
+    .stat-card .number {
+      color: #49e58a;
+      font-size: 38px;
+      font-weight: bold;
+    }
+
+    .stat-card p {
+      color: #9eaaa4;
+      margin-top: 5px;
+    }
+
+    .progress-box {
+      background: #0d1b14;
+      border: 1px solid #243a2d;
+      padding: 30px;
+      border-radius: 12px;
+    }
+
+    .progress-row {
+      margin-bottom: 22px;
+    }
+
+    .progress-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      color: #c5cec9;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: #1b2b21;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: #49e58a;
+      border-radius: 20px;
+    }
+
+    /* SKILLS */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .skill-card {
+      border: 1px solid #20362a;
+      background: #0b1711;
+      padding: 28px;
+      border-radius: 12px;
+    }
+
+    .skill-card h3 {
+      color: #49e58a;
+      margin-bottom: 10px;
+    }
+
+    .skill-card p {
+      color: #9eaaa4;
+    }
+
+    /* EDUCATION */
+    .education {
+      border-left: 2px solid #49e58a;
+      padding-left: 30px;
+    }
+
+    .education-item {
+      margin-bottom: 35px;
+    }
+
+    .education-item .year {
+      color: #49e58a;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .education-item h3 {
+      margin: 5px 0;
+      font-size: 22px;
+    }
+
+    .education-item p {
+      color: #9eaaa4;
+    }
+
+    /* CONTACT */
+    .contact-box {
+      text-align: center;
+      background: #0b1711;
+      border: 1px solid #20362a;
+      border-radius: 15px;
+      padding: 60px 30px;
+    }
+
+    .contact-box h2 {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .contact-box p {
+      color: #9eaaa4;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid #1c3026;
+      padding: 30px 0;
+      text-align: center;
+      color: #7f8d85;
+      font-size: 14px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 850px) {
+      .nav-links {
+        display: none;
+      }
+
+      .about-grid,
+      .projects-grid,
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero {
+        min-height: 550px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 45px;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="container nav-container">
+      <div class="logo">BOYA <span>VIKRAM</span></div>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <a href="#contact" class="contact-btn">Get in Touch</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+
+        <div class="small-title">DATA ANALYST PORTFOLIO</div>
+
+        <h1>
+          Hi, I'm <span>BOYA VIKRAM</span>
+        </h1>
+
+        <p>
+          Fresher Data Analyst skilled in Excel, SQL and Power BI.
+          I enjoy transforming data into meaningful insights,
+          dashboards and business decisions.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">View My Projects</a>
+          <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+
+      <div class="section-title">
+        <div class="label">About Me</div>
+        <h2>Turning Data Into Insights</h2>
+        <p>A quick introduction about me and my analytical journey.</p>
+      </div>
+
+      <div class="about-grid">
+
+        <div class="about-text">
+          <p>
+            I am a B.Tech graduate and a fresher looking to start my
+            career as a Data Analyst.
+          </p>
+
+          <p>
+            I have hands-on experience working with Excel, SQL and
+            Power BI through practical data analytics projects.
+          </p>
+
+          <p>
+            My projects focus on analyzing real-world data, identifying
+            trends and creating interactive dashboards that help
+            communicate insights clearly.
+          </p>
+
+          <p>
+            I am a quick learner and continuously working to improve
+            my technical and analytical skills.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <h3>Quick Information</h3>
+
+          <div class="info">
+            <span>Name</span>
+            <strong>BOYA VIKRAM</strong>
+          </div>
+
+          <div class="info">
+            <span>Role</span>
+            <strong>Data Analyst</strong>
+          </div>
+
+          <div class="info">
+            <span>Experience</span>
+            <strong>Fresher</strong>
+          </div>
+
+          <div class="info">
+            <span>Skills</span>
+            <strong>Excel, SQL, Power BI</strong>
+          </div>
+
+          <div class="info">
+            <span>Degree</span>
+            <strong>B.Tech</strong>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+
+      <div class="section-title">
+        <div class="label">My Work</div>
+        <h2>Featured Projects</h2>
+        <p>Selected data analytics projects from my portfolio.</p>
+      </div>
+
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-number">01 / PROJECT</div>
+
+          <h3>Sales Performance Analysis</h3>
+
+          <p>
+            Analyzed sales, profit, categories and regional performance
+            to identify business trends and profitability insights.
+          </p>
+
+          <div class="tags">
+            <span class="tag">Excel</span>
+            <span class="tag">Power BI</span>
+            <span class="tag">Data Analysis</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-number">02 / PROJECT</div>
+
+          <h3>Healthcare Analytics Dashboard</h3>
+
+          <p>
+            Built an interactive healthcare dashboard to analyze
+            patients, medical conditions, admissions, billing and
+            demographic information.
+          </p>
+
+          <div class="tags">
+            <span class="tag">Power BI</span>
+            <span class="tag">Healthcare</span>
+            <span class="tag">Dashboard</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-number">03 / PROJECT</div>
+
+          <h3>AI Financial Intelligence</h3>
+
+          <p>
+            Developed an AI-powered financial intelligence project
+            designed to analyze financial data and answer business
+            questions using data insights.
+          </p>
+
+          <div class="tags">
+            <span class="tag">SQL</span>
+            <span class="tag">Power BI</span>
+            <span class="tag">AI</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DASHBOARD -->
+  <section id="dashboard" class="stats-section">
+    <div class="container">
+
+      <div class="section-title">
+        <div class="label">Portfolio Dashboard</div>
+        <h2>My Analytics Journey</h2>
+        <p>Overview of my current portfolio and skills.</p>
+      </div>
+
+      <div class="stats-grid">
+
+        <div class="stat-card">
+          <div class="number">03</div>
+          <p>Projects Completed</p>
+        </div>
+
+        <div class="stat-card">
+          <div class="number">03</div>
+          <p>Core Skills</p>
+        </div>
+
+        <div class="stat-card">
+          <div class="number">02</div>
+          <p>Power BI Dashboards</p>
+        </div>
+
+        <div class="stat-card">
+          <div class="number">01</div>
+          <p>AI Project</p>
+        </div>
+
+      </div>
+
+      <div class="progress-box">
+
+        <div class="progress-row">
+          <div class="progress-header">
+            <span>Excel</span>
+            <span>85%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width:85%"></div>
+          </div>
+        </div>
+
+        <div class="progress-row">
+          <div class="progress-header">
+            <span>SQL</span>
+            <span>80%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width:80%"></div>
+          </div>
+        </div>
+
+        <div class="progress-row">
+          <div class="progress-header">
+            <span>Power BI</span>
+            <span>85%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width:85%"></div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+
+      <div class="section-title">
+        <div class="label">Technical Skills</div>
+        <h2>What I Work With</h2>
+      </div>
+
+      <div class="skills-grid">
+
+        <div class="skill-card">
+          <h3>Excel</h3>
+          <p>
+            Data cleaning, formulas, analysis, tables and reporting.
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <h3>SQL</h3>
+          <p>
+            Data querying, filtering, aggregation, joins and analysis.
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Power BI</h3>
+          <p>
+            Interactive dashboards, data visualization, KPIs and
+            business insights.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="container">
+
+      <div class="section-title">
+        <div class="label">Education</div>
+        <h2>My Education</h2>
+      </div>
+
+      <div class="education">
+
+        <div class="education-item">
+          <div class="year">B.TECH</div>
+          <h3>B.Tech – CSE (AI)</h3>
+          <p>Computer Science and Engineering – Artificial Intelligence</p>
+        </div>
+
+        <div class="education-item">
+          <div class="year">CAREER GOAL</div>
+          <h3>Data Analyst</h3>
+          <p>
+            Seeking an opportunity to start my professional career
+            in data analytics.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+
+      <div class="contact-box">
+
+        <h2>Let's Connect</h2>
+
+        <p>
+          I am looking for opportunities to start my career as a
+          Data Analyst. If you have an opportunity or would like to
+          connect, feel free to reach out.
+        </p>
+
+        <a href="mailto:your-email@example.com" class="btn btn-primary">
+          Get in Touch
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      © 2026 BOYA VIKRAM | Data Analyst Portfolio
+    </div>
+  </footer>
+
+</body>
+</html>
