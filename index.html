@@ -3,792 +3,129 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BOYA VIKRAM | Data Analyst Portfolio</title>
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #07100c;
-      color: #ffffff;
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1150px;
-      margin: auto;
-    }
-
-    /* NAVBAR */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(7, 16, 12, 0.95);
-      border-bottom: 1px solid #1c3026;
-      backdrop-filter: blur(10px);
-    }
-
-    .nav-container {
-      min-height: 75px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-size: 22px;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
-
-    .logo span {
-      color: #49e58a;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 30px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: #d4ddd8;
-      font-size: 14px;
-      transition: 0.3s;
-    }
-
-    .nav-links a:hover {
-      color: #49e58a;
-    }
-
-    .contact-btn {
-      background: #49e58a;
-      color: #07100c;
-      padding: 11px 20px;
-      border-radius: 7px;
-      font-weight: bold;
-      font-size: 14px;
-    }
-
-    /* HERO */
-    .hero {
-      min-height: 650px;
-      display: flex;
-      align-items: center;
-      padding: 80px 0;
-    }
-
-    .hero-content {
-      max-width: 760px;
-    }
-
-    .small-title {
-      color: #49e58a;
-      font-size: 15px;
-      font-weight: bold;
-      margin-bottom: 18px;
-      letter-spacing: 1px;
-    }
-
-    .hero h1 {
-      font-size: clamp(42px, 7vw, 78px);
-      line-height: 1.05;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 span {
-      color: #49e58a;
-    }
-
-    .hero p {
-      color: #aab7b0;
-      font-size: 18px;
-      max-width: 650px;
-      margin-bottom: 30px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 13px 23px;
-      border-radius: 7px;
-      font-weight: bold;
-      border: 1px solid #49e58a;
-    }
-
-    .btn-primary {
-      background: #49e58a;
-      color: #07100c;
-    }
-
-    .btn-secondary {
-      color: #49e58a;
-    }
-
-    /* SECTIONS */
-    section {
-      padding: 90px 0;
-    }
-
-    .section-title {
-      margin-bottom: 45px;
-    }
-
-    .section-title .label {
-      color: #49e58a;
-      font-size: 14px;
-      font-weight: bold;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .section-title h2 {
-      font-size: 38px;
-      margin-top: 8px;
-    }
-
-    .section-title p {
-      color: #9eaaa4;
-      margin-top: 10px;
-    }
-
-    /* ABOUT */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 50px;
-    }
-
-    .about-text p {
-      color: #adb8b2;
-      margin-bottom: 18px;
-      font-size: 16px;
-    }
-
-    .about-card {
-      border: 1px solid #20362a;
-      background: #0b1711;
-      padding: 30px;
-      border-radius: 12px;
-    }
-
-    .about-card h3 {
-      color: #49e58a;
-      margin-bottom: 20px;
-    }
-
-    .info {
-      display: flex;
-      justify-content: space-between;
-      padding: 12px 0;
-      border-bottom: 1px solid #1c2b22;
-      color: #b8c2bd;
-    }
-
-    .info:last-child {
-      border-bottom: none;
-    }
-
-    /* PROJECTS */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
-
-    .project-card {
-      background: #0b1711;
-      border: 1px solid #20362a;
-      border-radius: 12px;
-      padding: 25px;
-      transition: 0.3s;
-    }
-
-    .project-card:hover {
-      transform: translateY(-7px);
-      border-color: #49e58a;
-    }
-
-    .project-number {
-      color: #49e58a;
-      font-size: 14px;
-      font-weight: bold;
-      margin-bottom: 25px;
-    }
-
-    .project-card h3 {
-      font-size: 22px;
-      margin-bottom: 15px;
-    }
-
-    .project-card p {
-      color: #9eaaa4;
-      font-size: 14px;
-      margin-bottom: 20px;
-    }
-
-    .tags {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .tag {
-      padding: 6px 10px;
-      border-radius: 20px;
-      background: #122219;
-      border: 1px solid #284334;
-      color: #49e58a;
-      font-size: 12px;
-    }
-
-    /* DASHBOARD / STATS */
-    .stats-section {
-      background: #0a1510;
-      border-top: 1px solid #1d3025;
-      border-bottom: 1px solid #1d3025;
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      margin-bottom: 45px;
-    }
-
-    .stat-card {
-      background: #0d1b14;
-      border: 1px solid #243a2d;
-      border-radius: 12px;
-      padding: 28px;
-    }
-
-    .stat-card .number {
-      color: #49e58a;
-      font-size: 38px;
-      font-weight: bold;
-    }
-
-    .stat-card p {
-      color: #9eaaa4;
-      margin-top: 5px;
-    }
-
-    .progress-box {
-      background: #0d1b14;
-      border: 1px solid #243a2d;
-      padding: 30px;
-      border-radius: 12px;
-    }
-
-    .progress-row {
-      margin-bottom: 22px;
-    }
-
-    .progress-header {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 8px;
-      color: #c5cec9;
-    }
-
-    .progress-bar {
-      width: 100%;
-      height: 8px;
-      background: #1b2b21;
-      border-radius: 20px;
-      overflow: hidden;
-    }
-
-    .progress-fill {
-      height: 100%;
-      background: #49e58a;
-      border-radius: 20px;
-    }
-
-    /* SKILLS */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .skill-card {
-      border: 1px solid #20362a;
-      background: #0b1711;
-      padding: 28px;
-      border-radius: 12px;
-    }
-
-    .skill-card h3 {
-      color: #49e58a;
-      margin-bottom: 10px;
-    }
-
-    .skill-card p {
-      color: #9eaaa4;
-    }
-
-    /* EDUCATION */
-    .education {
-      border-left: 2px solid #49e58a;
-      padding-left: 30px;
-    }
-
-    .education-item {
-      margin-bottom: 35px;
-    }
-
-    .education-item .year {
-      color: #49e58a;
-      font-size: 14px;
-      font-weight: bold;
-    }
-
-    .education-item h3 {
-      margin: 5px 0;
-      font-size: 22px;
-    }
-
-    .education-item p {
-      color: #9eaaa4;
-    }
-
-    /* CONTACT */
-    .contact-box {
-      text-align: center;
-      background: #0b1711;
-      border: 1px solid #20362a;
-      border-radius: 15px;
-      padding: 60px 30px;
-    }
-
-    .contact-box h2 {
-      font-size: 40px;
-      margin-bottom: 15px;
-    }
-
-    .contact-box p {
-      color: #9eaaa4;
-      max-width: 600px;
-      margin: 0 auto 30px;
-    }
-
-    /* FOOTER */
-    footer {
-      border-top: 1px solid #1c3026;
-      padding: 30px 0;
-      text-align: center;
-      color: #7f8d85;
-      font-size: 14px;
-    }
-
-    /* MOBILE */
-    @media (max-width: 850px) {
-      .nav-links {
-        display: none;
-      }
-
-      .about-grid,
-      .projects-grid,
-      .skills-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .hero {
-        min-height: 550px;
-      }
-    }
-
-    @media (max-width: 500px) {
-      .stats-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero h1 {
-        font-size: 45px;
-      }
-
-      section {
-        padding: 65px 0;
-      }
-    }
-  </style>
+  <title>BOYA VIKRAM | Data Analyst</title>
+  <meta name="description" content="BOYA VIKRAM — Data Analyst portfolio showcasing analytics projects and dashboards.">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <header class="nav">
+    <a class="brand" href="#home">BOYA VIKRAM</a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#dashboards">Dashboards</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="menu" aria-label="Open menu">☰</button>
+  </header>
 
-  <!-- NAVIGATION -->
-  <nav>
-    <div class="container nav-container">
-      <div class="logo">BOYA <span>VIKRAM</span></div>
-
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#dashboard">Dashboard</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-
-      <a href="#contact" class="contact-btn">Get in Touch</a>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-content">
-
-        <div class="small-title">DATA ANALYST PORTFOLIO</div>
-
-        <h1>
-          Hi, I'm <span>BOYA VIKRAM</span>
-        </h1>
-
-        <p>
-          Fresher Data Analyst skilled in Excel, SQL and Power BI.
-          I enjoy transforming data into meaningful insights,
-          dashboards and business decisions.
-        </p>
-
-        <div class="hero-buttons">
-          <a href="#projects" class="btn btn-primary">View My Projects</a>
-          <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">DATA ANALYST PORTFOLIO</p>
+        <h1>Turning data into<br><span>clear insights.</span></h1>
+        <p class="hero-text">I build practical analytics projects and interactive dashboards using SQL, Excel and Power BI.</p>
+        <div class="buttons">
+          <a class="btn primary" href="#projects">View Projects</a>
+          <a class="btn ghost" href="#contact">Contact Me</a>
         </div>
-
       </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="container">
-
-      <div class="section-title">
-        <div class="label">About Me</div>
-        <h2>Turning Data Into Insights</h2>
-        <p>A quick introduction about me and my analytical journey.</p>
+      <div class="hero-chart">
+        <div class="chart-title">Analytics Overview</div>
+        <div class="big-number">DATA <span>+</span> INSIGHTS</div>
+        <div class="bars">
+          <i style="height:35%"></i><i style="height:48%"></i><i style="height:42%"></i>
+          <i style="height:65%"></i><i style="height:58%"></i><i style="height:78%"></i>
+          <i style="height:72%"></i><i style="height:92%"></i>
+        </div>
+        <div class="trend">↗ Analytics • Visualization • Decision Support</div>
       </div>
+    </section>
 
+    <section class="stats">
+      <div><strong>4+</strong><span>Analytics Projects</span></div>
+      <div><strong>2</strong><span>Featured Dashboards</span></div>
+      <div><strong>5</strong><span>Core Skills</span></div>
+      <div><strong>7.14</strong><span>B.Tech CGPA</span></div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="section-head"><p class="eyebrow">ABOUT</p><h2>Who I am</h2></div>
       <div class="about-grid">
-
-        <div class="about-text">
-          <p>
-            I am a B.Tech graduate and a fresher looking to start my
-            career as a Data Analyst.
-          </p>
-
-          <p>
-            I have hands-on experience working with Excel, SQL and
-            Power BI through practical data analytics projects.
-          </p>
-
-          <p>
-            My projects focus on analyzing real-world data, identifying
-            trends and creating interactive dashboards that help
-            communicate insights clearly.
-          </p>
-
-          <p>
-            I am a quick learner and continuously working to improve
-            my technical and analytical skills.
-          </p>
-        </div>
-
-        <div class="about-card">
-          <h3>Quick Information</h3>
-
-          <div class="info">
-            <span>Name</span>
-            <strong>BOYA VIKRAM</strong>
-          </div>
-
-          <div class="info">
-            <span>Role</span>
-            <strong>Data Analyst</strong>
-          </div>
-
-          <div class="info">
-            <span>Experience</span>
-            <strong>Fresher</strong>
-          </div>
-
-          <div class="info">
-            <span>Skills</span>
-            <strong>Excel, SQL, Power BI</strong>
-          </div>
-
-          <div class="info">
-            <span>Degree</span>
-            <strong>B.Tech</strong>
+        <div class="card about-card">
+          <h3>BOYA VIKRAM</h3>
+          <p>I am a fresher Data Analyst with a foundation in data analysis, visualization and business intelligence. I enjoy exploring data, identifying useful patterns and creating dashboards that make information easier to understand.</p>
+          <div class="education">
+            <b>B.Tech — Computer Science & Engineering (AI)</b>
+            <span>Gates Institute of Technology</span>
+            <span>CGPA: 7.14</span>
           </div>
         </div>
-
+        <div class="card mini-chart">
+          <div class="donut"><span>DATA<br>INSIGHTS</span></div>
+          <div>
+            <h3>My approach</h3>
+            <p>Collect → Clean → Analyze → Visualize → Communicate</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- PROJECTS -->
-  <section id="projects">
-    <div class="container">
-
-      <div class="section-title">
-        <div class="label">My Work</div>
-        <h2>Featured Projects</h2>
-        <p>Selected data analytics projects from my portfolio.</p>
+    <section id="projects" class="section dark-section">
+      <div class="section-head"><p class="eyebrow">PROJECTS</p><h2>Selected work</h2></div>
+      <div class="project-grid">
+        <article class="project-card"><span class="project-no">01</span><h3>Sales Performance Analysis</h3><p>Analyzed sales data to identify trends, performance patterns and business insights.</p><div class="tags"><span>Power BI</span><span>Excel</span><span>Data Analysis</span></div></article>
+        <article class="project-card"><span class="project-no">02</span><h3>E-commerce Profitability & Revenue Intelligence</h3><p>Built a dashboard to analyze revenue, profit, categories and regional performance.</p><div class="tags"><span>Power BI</span><span>Excel</span><span>Visualization</span></div></article>
+        <article class="project-card"><span class="project-no">03</span><h3>IT Service Desk and SLA Analysis</h3><p>Analyzed support tickets, priorities, SLA compliance and department performance.</p><div class="tags"><span>SQL</span><span>Power BI</span><span>SLA Analysis</span></div></article>
+        <article class="project-card"><span class="project-no">04</span><h3>AI Financial Intelligence Chatbot</h3><p>Built an AI-powered financial analytics project for exploring financial data and insights.</p><div class="tags"><span>Power BI</span><span>Python</span><span>AI</span></div></article>
       </div>
+    </section>
 
-      <div class="projects-grid">
-
-        <div class="project-card">
-          <div class="project-number">01 / PROJECT</div>
-
-          <h3>Sales Performance Analysis</h3>
-
-          <p>
-            Analyzed sales, profit, categories and regional performance
-            to identify business trends and profitability insights.
-          </p>
-
-          <div class="tags">
-            <span class="tag">Excel</span>
-            <span class="tag">Power BI</span>
-            <span class="tag">Data Analysis</span>
-          </div>
+    <section id="dashboards" class="section">
+      <div class="section-head"><p class="eyebrow">DASHBOARDS</p><h2>Interactive analytics</h2></div>
+      <div class="dashboard-grid">
+        <div class="dashboard card">
+          <div class="dash-visual sales"><div class="line"></div><div class="barset"><i></i><i></i><i></i><i></i><i></i></div></div>
+          <h3>Sales Performance Analysis</h3><p>Power BI dashboard focused on sales performance and business trends.</p>
         </div>
-
-        <div class="project-card">
-          <div class="project-number">02 / PROJECT</div>
-
-          <h3>Healthcare Analytics Dashboard</h3>
-
-          <p>
-            Built an interactive healthcare dashboard to analyze
-            patients, medical conditions, admissions, billing and
-            demographic information.
-          </p>
-
-          <div class="tags">
-            <span class="tag">Power BI</span>
-            <span class="tag">Healthcare</span>
-            <span class="tag">Dashboard</span>
-          </div>
+        <div class="dashboard card">
+          <div class="dash-visual health"><div class="pulse">+</div><div class="ring"></div></div>
+          <h3>Healthcare Analytics Dashboard</h3><p>Dashboard exploring healthcare records, conditions, admissions and key metrics.</p>
         </div>
-
-        <div class="project-card">
-          <div class="project-number">03 / PROJECT</div>
-
-          <h3>AI Financial Intelligence</h3>
-
-          <p>
-            Developed an AI-powered financial intelligence project
-            designed to analyze financial data and answer business
-            questions using data insights.
-          </p>
-
-          <div class="tags">
-            <span class="tag">SQL</span>
-            <span class="tag">Power BI</span>
-            <span class="tag">AI</span>
-          </div>
-        </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- DASHBOARD -->
-  <section id="dashboard" class="stats-section">
-    <div class="container">
-
-      <div class="section-title">
-        <div class="label">Portfolio Dashboard</div>
-        <h2>My Analytics Journey</h2>
-        <p>Overview of my current portfolio and skills.</p>
+    <section id="skills" class="section dark-section">
+      <div class="section-head"><p class="eyebrow">SKILLS</p><h2>Tools I work with</h2></div>
+      <div class="skills">
+        <div class="skill"><b>Excel</b><span>Analysis & reporting</span></div>
+        <div class="skill"><b>SQL</b><span>Queries & data analysis</span></div>
+        <div class="skill"><b>Power BI</b><span>Dashboards & visualization</span></div>
+        <div class="skill"><b>Python</b><span>Analytics projects</span></div>
+        <div class="skill"><b>Data Visualization</b><span>Insight communication</span></div>
       </div>
+    </section>
 
-      <div class="stats-grid">
+    <section class="section extras">
+      <div class="extra-card"><p class="eyebrow">CERTIFICATES</p><h3>Certificates & Highlights</h3><ul><li>C Programming</li><li>Codeworks Certificate</li><li>Internet of Things (IoT)</li><li>Edu Skills Certification</li></ul></div>
+      <div class="extra-card"><p class="eyebrow">LANGUAGES</p><h3>Languages</h3><ul><li>English</li><li>Telugu</li><li>Hindi</li></ul></div>
+      <div class="extra-card"><p class="eyebrow">INTERESTS</p><h3>Hobbies</h3><ul><li>Cycling</li><li>Watching movies</li><li>Sports</li></ul></div>
+    </section>
 
-        <div class="stat-card">
-          <div class="number">03</div>
-          <p>Projects Completed</p>
-        </div>
-
-        <div class="stat-card">
-          <div class="number">03</div>
-          <p>Core Skills</p>
-        </div>
-
-        <div class="stat-card">
-          <div class="number">02</div>
-          <p>Power BI Dashboards</p>
-        </div>
-
-        <div class="stat-card">
-          <div class="number">01</div>
-          <p>AI Project</p>
-        </div>
-
+    <section id="contact" class="contact">
+      <p class="eyebrow">CONTACT</p>
+      <h2>Let's connect.</h2>
+      <p>Open to Data Analyst opportunities and conversations about analytics.</p>
+      <div class="contact-links">
+        <a href="mailto:YOUR_EMAIL@example.com">Email</a>
+        <a href="YOUR_LINKEDIN_URL" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="YOUR_GITHUB_URL" target="_blank" rel="noopener">GitHub</a>
       </div>
+    </section>
+  </main>
 
-      <div class="progress-box">
-
-        <div class="progress-row">
-          <div class="progress-header">
-            <span>Excel</span>
-            <span>85%</span>
-          </div>
-          <div class="progress-bar">
-            <div class="progress-fill" style="width:85%"></div>
-          </div>
-        </div>
-
-        <div class="progress-row">
-          <div class="progress-header">
-            <span>SQL</span>
-            <span>80%</span>
-          </div>
-          <div class="progress-bar">
-            <div class="progress-fill" style="width:80%"></div>
-          </div>
-        </div>
-
-        <div class="progress-row">
-          <div class="progress-header">
-            <span>Power BI</span>
-            <span>85%</span>
-          </div>
-          <div class="progress-bar">
-            <div class="progress-fill" style="width:85%"></div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills">
-    <div class="container">
-
-      <div class="section-title">
-        <div class="label">Technical Skills</div>
-        <h2>What I Work With</h2>
-      </div>
-
-      <div class="skills-grid">
-
-        <div class="skill-card">
-          <h3>Excel</h3>
-          <p>
-            Data cleaning, formulas, analysis, tables and reporting.
-          </p>
-        </div>
-
-        <div class="skill-card">
-          <h3>SQL</h3>
-          <p>
-            Data querying, filtering, aggregation, joins and analysis.
-          </p>
-        </div>
-
-        <div class="skill-card">
-          <h3>Power BI</h3>
-          <p>
-            Interactive dashboards, data visualization, KPIs and
-            business insights.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- EDUCATION -->
-  <section id="education">
-    <div class="container">
-
-      <div class="section-title">
-        <div class="label">Education</div>
-        <h2>My Education</h2>
-      </div>
-
-      <div class="education">
-
-        <div class="education-item">
-          <div class="year">B.TECH</div>
-          <h3>B.Tech – CSE (AI)</h3>
-          <p>Computer Science and Engineering – Artificial Intelligence</p>
-        </div>
-
-        <div class="education-item">
-          <div class="year">CAREER GOAL</div>
-          <h3>Data Analyst</h3>
-          <p>
-            Seeking an opportunity to start my professional career
-            in data analytics.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="container">
-
-      <div class="contact-box">
-
-        <h2>Let's Connect</h2>
-
-        <p>
-          I am looking for opportunities to start my career as a
-          Data Analyst. If you have an opportunity or would like to
-          connect, feel free to reach out.
-        </p>
-
-        <a href="mailto:your-email@example.com" class="btn btn-primary">
-          Get in Touch
-        </a>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      © 2026 BOYA VIKRAM | Data Analyst Portfolio
-    </div>
-  </footer>
-
+  <footer>© 2026 BOYA VIKRAM · Data Analyst</footer>
+  <script src="script.js"></script>
 </body>
 </html>
